@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="lib/p5.min.js"></script>
+    <script src="lib/p5.dom.min.js"></script>
+    <script src="lib/p5.sound.min.js"></script>
+    <script src="sketch.js"></script>
+    <script>
+      
+      function fetch()
+        {
+            
+            initilize();
+             document.getElementById("head").innerHTML = "";
+        }
+      
+      </script>  
+    <style> body {padding: 0; margin: 0;} </style>
+  </head>
+  <body>
+      <div>
+          <Center><h1>LET'S PLAY CHAIN REACTION </h1></Center>
+      </div>
+      <div style="width: 100%; overflow: hidden;">
+      <div style="width: 600px; float: left;margin-left: 50px"> 
+         
+           <center><h1>ENTER PLAYER'S DETAIL</h1>  
+            PLAYER 1:<INPUT type="text" id="player0"><br><br>
+            PLAYER 2:<INPUT type="text" id="player1"><br><br>  
+            PLAYER 3:<INPUT type="text" id="player2"><br><br> 
+            PLAYER 4:<INPUT type="text" id="player3"><br><br> 
+            PLAYER 5:<INPUT type="text" id="player4"><br><br>
+            PLAYER 6:<INPUT type="text" id="player5"><br><br>  
+            PLAYER 7:<INPUT type="text" id="player6"><br><br>   
+              <button onclick="fetch()">SUBMIT</button></center>
+             
+          </div>
+               <h1 id="head"></h1>
+      <div style="margin-left: 700px;" id="sharma"></div>
+            
+      </div>
+      
+  </body>
+</html>
