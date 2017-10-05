@@ -1,28 +1,38 @@
 
             function setup() {
             var myCanvas = createCanvas (300,400);
-            myCanvas.parent("sharma");   
+            myCanvas.parent("sharma");
+                
                 for(var i=0;i<7;i++)
                                         {
                                             document.getElementById("player"+i).style.backgroundColor=col[i];
                                             }
             grid();
             }
-            function draw() {
 
+            function draw() {
+                   
                 if(totalplayer==1)
                     {   
                          document.getElementById("player"+i).style.backgroundColor=col[i];
                     }
-             if(check()==totalplayer-1 &&totalplayer!=1){ 
-                                    document.getElementById("head").innerHTML = "Congratulations! &nbsp"+player[won].name+" &nbsp wins ";
-                                      won=66;
+             if(check()==totalplayer-1 &&totalplayer!=1 && won!=99){ 
+                                    
+                                    textSize(40);
+                                    fill("white");
+                                     console.log(won);
+                                    textAlign(CENTER);
+                                    text("Congratulations!", 150, 150);
+                                    text(player[won].name,150,200);
+                                    text("wins",150,250);
+                                            won=66;
                                        for(var i=0;i<7;i++)
                                         {
                                             document.getElementById("player"+i).style.backgroundColor=col[i];
                                             }
                                       }
              }
+            var repeat=0;
             var totalplayer=0;
             var nextcolor="";
             var player=[];
@@ -128,6 +138,7 @@
                 {
                     var count=0;
                     var have=0;
+                    var winin=0;
                     for(var pl=0;pl<totalplayer;pl++)
                         {
                             have=0;
@@ -137,6 +148,7 @@
                                 continue;
                             }
                             else{
+                                winin++;
                                 won=pl;
                             }
                             for(var i=0;i<6;i++)
@@ -159,7 +171,14 @@
                                    refresh();
                                     count++; 
                                 }
+                            
                         }
+                
+                    if(winin>1)
+                        {
+                            won=99;
+                        }
+                    
                     return count; 
   
                 }
@@ -204,7 +223,7 @@
                         prv=turn;
                         turn=next(turn);
                        
-                        console.log(turn);
+                       // console.log(turn);
                         if(arr[normx][normy].playerid==player[turn].id || arr[normx][normy].val==0)
                         {       disable=1;
                                 playeractive.color=player[turn].color;
